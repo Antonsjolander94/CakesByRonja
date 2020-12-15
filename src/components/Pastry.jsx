@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import tw, { styled } from "twin.macro";
 import Img from "gatsby-image";
-import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import styles from "./ZoomableMedia.module.scss";
+
+import { Controlled as ControlledZoom } from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 const PastryWrapper = styled.div`
   ${tw`relative overflow-hidden cursor-pointer`}
@@ -23,19 +25,26 @@ const PastryImage = styled(Img)`
 `;
 
 const Pastry = ({ title, image, imageTitle }) => {
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const handleZoomChange = useCallback((shouldZoom) => {
+    setIsZoomed(shouldZoom);
+  }, []);
+
   return (
     <PastryWrapper>
-      <Zoom
+      <ControlledZoom
         className={styles.ZoomableMedia}
-        overlayBgColorStart="rgba(0, 0, 0, 0)"
-        zoomMargin={20}
+        isZoomed={isZoomed}
+        onZoomChange={handleZoomChange}
       >
         <PastryImage
           alt={imageTitle}
           className="pastry-img"
           fluid={image.fluid}
+          style={{ objectFit: "cover", width: "100%", height: "100%" }}
         />
-      </Zoom>
+      </ControlledZoom>
       <PastryTitle>{title}</PastryTitle>
     </PastryWrapper>
   );
