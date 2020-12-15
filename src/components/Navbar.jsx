@@ -12,7 +12,7 @@ const NavbarContainer = styled.nav`
 `;
 
 const StyledLogo = styled(Logo)`
-  ${tw`lg:h-28 h-20 lg:w-28 w-20`}
+  ${tw`lg:h-28 h-20 lg:w-28 w-40 justify-center flex items-center`}
   path {
     fill: #663433;
     transition: all 0.3s ease;
