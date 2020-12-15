@@ -74,5 +74,16 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Cakes By Ronja",
+        short_name: "CBR",
+        start_url: "/",
+        background_color: "#e3c7de",
+        theme_color: "#e3c7de",
+        icon: "src/images/cakesbyronja-favicon.png",
+      },
+    },
   ],
 };

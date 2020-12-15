@@ -56,7 +56,7 @@ const Index = ({ location }) => {
               </AboutImageWrapper>
               <AboutText>
                 Välkommen till Cakes By Ronja. Skrolla ned för att se mina
-                bakverk 🧁
+                bakverk 🧁🍰
               </AboutText>
             </AboutContent>
           </AboutContainer>
