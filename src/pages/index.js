@@ -3,10 +3,10 @@ import Layout from "../components/Layout";
 import Pastries from "../components/Pastries";
 import PageTransition from "gatsby-plugin-page-transitions";
 
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
 
 const IndexContainer = tw.div`
-  container mx-auto
+  container mx-auto 
 `;
 
 const index = () => {

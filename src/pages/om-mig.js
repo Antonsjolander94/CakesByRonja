@@ -13,7 +13,7 @@ const AboutWrapper = tw.div`
   flex justify-center
 `;
 const AboutContent = styled.div`
-  ${tw`flex flex-col justify-center text-center lg:max-w-3xl max-w-sm`}
+  ${tw`flex flex-col justify-center text-center lg:max-w-3xl max-w-xs`}
   p {
     ${tw`mb-5`}
   }
