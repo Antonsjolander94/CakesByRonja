@@ -104,12 +104,12 @@ const Kontakt = () => {
             <ContactContent>
               <ContactForm>
                 <Form
-                  name="Contact Form"
+                  name="Ronja Form"
                   method="POST"
                   data-netlify="true"
                   action="/tack"
                 >
-                  <Input type="hidden" name="form-name" value="Contact Form" />
+                  <Input type="hidden" name="form-name" value="Ronja Form" />
                   <Label htmlFor="email">Email</Label>
                   <Input
                     required
