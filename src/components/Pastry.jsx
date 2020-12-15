@@ -37,6 +37,7 @@ const Pastry = ({ title, image, imageTitle }) => {
         className={styles.ZoomableMedia}
         isZoomed={isZoomed}
         onZoomChange={handleZoomChange}
+        closeText={"Stäng"}
       >
         <PastryImage
           alt={imageTitle}
@@ -44,6 +45,7 @@ const Pastry = ({ title, image, imageTitle }) => {
           fluid={image.fluid}
           style={{ objectFit: "cover", width: "100%", height: "100%" }}
         />
+        <p className="sr-only">{imageTitle}</p>
       </ControlledZoom>
       <PastryTitle>{title}</PastryTitle>
     </PastryWrapper>

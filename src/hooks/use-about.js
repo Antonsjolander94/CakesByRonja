@@ -18,6 +18,9 @@ const UseAbout = () => {
             fixed(width: 250, height: 250, quality: 100) {
               ...GatsbyContentfulFixed_withWebp
             }
+            fluid(maxWidth: 500, quality: 100) {
+              ...GatsbyContentfulFluid_withWebp
+            }
           }
         }
       }

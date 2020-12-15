@@ -36,7 +36,13 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful starter",
+    title: "Cakes By Ronja",
+    titleTemplate:
+      "%s · Bröllopstårtor, tårtor och unika bakverk - Åkersberga, Stockholm. Ronja Sjölander",
+    description:
+      "Bröllopstårtor, tårtor och unika bakverk i Åkersberga, Stockholm",
+    url: "https://www.cakesbyronja.se/", // No trailing slash allowed!
+    siteUrl: "https://www.cakesbyronja.se/", // No trailing slash allowed!
   },
   pathPrefix: "/gatsby-contentful-starter",
   plugins: [

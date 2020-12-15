@@ -5,6 +5,7 @@ import UseAbout from "../hooks/use-about";
 import Img from "gatsby-image";
 import PageTransition from "gatsby-plugin-page-transitions";
 import { Heading1, Paragraph } from "../components/Shared/Types";
+import SEO from "../components/seo";
 
 const AboutContainer = tw.section`
   container mx-auto mt-10 
@@ -21,12 +22,19 @@ const AboutContent = styled.div`
 const StyledImage = styled(Img)`
   ${tw`rounded-full mb-10 mx-auto`}
 `;
-const omMig = () => {
+const omMig = ({ location }) => {
   const data = UseAbout();
 
   console.log({ about: data });
   return (
     <Layout>
+      <SEO
+        title={"Om mig"}
+        description={
+          "Bröllopstårtor, tårtor och unika bakverk - Åkersberga, Stockholm. Ronja Sjölander"
+        }
+        pathname={location}
+      />
       <PageTransition>
         <AboutContainer>
           <AboutWrapper>

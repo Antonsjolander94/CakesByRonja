@@ -2,9 +2,23 @@ import React from "react";
 import tw, { styled } from "twin.macro";
 import Logo from "../assets/Logo.inline.svg";
 import { Link } from "gatsby";
+import CakesBanner from "../assets/CakesBanner.inline.svg";
+
+const Banner = styled(CakesBanner)`
+  ${tw`w-full h-6 absolute z-50`}
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  transform: scale(1.2);
+
+  @media (max-width: 1023px) {
+    bottom: -8px;
+    transform: scale(4.5);
+  }
+`;
 
 const NavbarWrapper = styled.header`
-  ${tw`lg:py-8 py-5`}
+  ${tw`lg:py-8 py-5 relative  z-50`}
   background-color: #e3c7de;
 `;
 const NavbarContainer = styled.nav`
@@ -29,10 +43,10 @@ const Button = styled(Link)`
   &:hover, &:focus {
     .logo {
       path {
-        fill: black;
+        fill: #4d2726;
       }
       polygon {
-        fill: black;
+        fill: #4d2726;
       }
     }
   }
@@ -48,6 +62,7 @@ const Right = styled.div`
 const Navbar = () => {
   return (
     <NavbarWrapper>
+      <Banner />
       <NavbarContainer>
         <Left>
           <Button to="/om-mig">Om mig</Button>

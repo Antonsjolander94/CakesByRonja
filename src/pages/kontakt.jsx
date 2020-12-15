@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import tw, { styled } from "twin.macro";
 import PageTransition from "gatsby-plugin-page-transitions";
+import SEO from "../components/seo";
 
 const ContactContainer = tw.div`
   container mx-auto mt-10
@@ -92,12 +93,19 @@ const SubmitButton = styled.button`
   ${tw`disabled:(opacity-50 pointer-events-none)`}
 `;
 
-const Kontakt = () => {
+const Kontakt = ({ location }) => {
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
 
   return (
     <Layout>
+      <SEO
+        title={"Kontakt"}
+        description={
+          "Bröllopstårtor, tårtor och unika bakverk - Åkersberga, Stockholm. Ronja Sjölander"
+        }
+        pathname={location}
+      />
       <PageTransition>
         <ContactContainer>
           <ContactWrapper>

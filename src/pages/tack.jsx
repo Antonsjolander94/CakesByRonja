@@ -2,6 +2,7 @@ import React from "react";
 import tw, { styled } from "twin.macro";
 import Layout from "../components/Layout";
 import { Heading1, Paragraph } from "../components/Shared/Types";
+import SEO from "../components/seo";
 
 const TackContainer = tw.section`
   container mx-auto mt-10 
@@ -16,9 +17,16 @@ const TackContent = styled.div`
   }
 `;
 
-const Tack = () => {
+const Tack = ({ location }) => {
   return (
     <Layout>
+      <SEO
+        title={"Tack för ditt mejl"}
+        description={
+          "Bröllopstårtor, tårtor och unika bakverk - Åkersberga, Stockholm. Ronja Sjölander"
+        }
+        pathname={location}
+      />
       <TackContainer>
         <TackWrapper>
           <TackContent>
