@@ -10,6 +10,7 @@ const Banner = styled(CakesBanner)`
   left: 0;
   right: 0;
   transform: scale(1.2);
+  z-index: 71;
 
   @media (max-width: 1023px) {
     bottom: -8px;
@@ -18,8 +19,9 @@ const Banner = styled(CakesBanner)`
 `;
 
 const NavbarWrapper = styled.header`
-  ${tw`lg:py-8 py-5 relative  z-50`}
+  ${tw`lg:py-8 py-5 relative`}
   background-color: #e3c7de;
+  z-index: 80;
 `;
 const NavbarContainer = styled.nav`
   ${tw`container mx-auto flex justify-between items-center`}

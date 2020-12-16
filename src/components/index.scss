@@ -6,7 +6,9 @@ html {
   box-sizing: border-box;
   overflow-y: scroll;
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
+
 .sr-only {
   position: absolute;
   width: 1px;

@@ -1,44 +1,60 @@
-import React, { useState, useEffect } from "react";
-import Pastry from "./Pastry";
-import usePastries from "../hooks/use-pastries";
+import React from "react";
+import Img from "gatsby-image";
+import usePastry from "../hooks/use-pastry";
 import tw, { styled } from "twin.macro";
-import StackGrid from "react-stack-grid";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+import styles from "./ZoomableMedia.module.scss";
+import Masonry from "react-masonry-css";
 
 const PastryGrid = styled.section`
-  /* ${tw`grid lg:grid-cols-3 grid-cols-2 lg:gap-1 mt-10`} */
-  ${tw`mt-10`}
+  ${tw`mt-20`}
+
+  .my-masonry-grid {
+    display: flex;
+    margin-left: -5px; /* gutter size offset */
+    margin-right: 5px; /* gutter size offset */
+    width: auto;
+  }
+  .my-masonry-grid_column {
+    padding-left: 10px; /* gutter size */
+    background-clip: padding-box;
+  }
+
+  /* Style your items */
+  .my-masonry-grid_column > div {
+    /* change div to reference your elements you put in <Masonry> */
+    background: grey;
+    margin-bottom: 10px;
+  }
 `;
 
 const Pastries = () => {
-  const isBrowser = typeof window !== "undefined";
-  const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0);
+  const { edges } = usePastry();
+  const images = edges[0].node.bilder;
 
-  useEffect(() => {
-    if (!isBrowser) return false;
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 2,
+  };
 
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
-
-  const { edges } = usePastries();
   return (
     <PastryGrid>
-      <StackGrid columnWidth={width <= 768 ? "50%" : "25%"} duration={0}>
-        {edges &&
-          edges.length &&
-          edges.map(({ node }) => (
-            <Pastry
-              key={node.contentful_id}
-              image={node.omslagsbild}
-              imageTitle={node.omslagsbild.title}
-              title={node.rubrik}
-            />
-          ))}
-      </StackGrid>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {images.map((img) => (
+          <div key={img.id}>
+            <Zoom className={styles.ZoomableMedia}>
+              <Img fluid={img.fluid} />
+            </Zoom>
+          </div>
+        ))}
+      </Masonry>
     </PastryGrid>
   );
 };

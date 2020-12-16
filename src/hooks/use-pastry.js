@@ -1,19 +1,20 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-const UsePastries = () => {
+const UsePastry = () => {
   const { data } = useStaticQuery(
     graphql`
-      query Pastries {
-        data: allContentfulBakverk {
+      query AllPastries {
+        data: allContentfulAllaBakverk {
           edges {
             node {
-              rubrik
-              contentful_id
-              omslagsbild {
+              bilder {
                 title
                 fluid(maxWidth: 1240) {
                   ...GatsbyContentfulFluid_withWebp
                 }
+                contentful_id
+                id
+                node_locale
               }
             }
           }
@@ -24,4 +25,4 @@ const UsePastries = () => {
   return data;
 };
 
-export default UsePastries;
+export default UsePastry;
