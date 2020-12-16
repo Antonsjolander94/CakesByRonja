@@ -28,7 +28,7 @@ const AboutText = styled.h1`
   ${tw`text-sm flex  flex-col ml-5`}
 `;
 const AboutImg = styled(Img)`
-  ${tw`w-16 h-16 rounded-full `}
+  ${tw`lg:w-16 w-14 lg:h-16 w-14 rounded-full `}
 `;
 const StyledLink = styled(Link)`
   ${tw`underline`}

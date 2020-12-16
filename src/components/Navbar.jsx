@@ -28,7 +28,7 @@ const NavbarContainer = styled.nav`
 `;
 
 const StyledLogo = styled(Logo)`
-  ${tw`lg:h-28 h-20 lg:w-28 w-40 justify-center flex items-center`}
+  ${tw`lg:h-28 h-20 lg:w-28 w-32 justify-center flex items-center`}
   path {
     fill: #663433;
     transition: all 0.3s ease;
@@ -55,10 +55,10 @@ const Button = styled(Link)`
 `;
 
 const Left = styled.div`
-  ${tw`font-sans font-medium text-lg underline tracking-wider uppercase lg:w-40 w-full flex lg:justify-start justify-center items-center cursor-pointer`}
+  ${tw`font-sans font-medium text-lg underline tracking-wider uppercase flex-1 flex lg:justify-start justify-center items-center cursor-pointer`}
 `;
 const Right = styled.div`
-  ${tw`font-sans font-medium text-lg underline tracking-wider uppercase lg:w-40 w-full flex lg:justify-end justify-center items-center cursor-pointer`}
+  ${tw`font-sans font-medium text-lg underline tracking-wider uppercase flex-1 flex lg:justify-end justify-center items-center cursor-pointer`}
 `;
 
 const Navbar = () => {

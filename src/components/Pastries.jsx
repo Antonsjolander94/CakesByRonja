@@ -24,7 +24,7 @@ const PastryGrid = styled.section`
   /* Style your items */
   .my-masonry-grid_column > div {
     /* change div to reference your elements you put in <Masonry> */
-    background: grey;
+    background: #f7dfc5;
     margin-bottom: 10px;
   }
 `;
