@@ -8,7 +8,7 @@ import styles from "./ZoomableMedia.module.scss";
 import Masonry from "react-masonry-css";
 
 const PastryGrid = styled.section`
-  ${tw`mt-20`}
+  ${tw`mt-20 container mx-auto lg:px-0 px-1`}
 
   .my-masonry-grid {
     display: flex;
