@@ -85,5 +85,17 @@ module.exports = {
         icon: "src/images/cakesbyronja-favicon.png",
       },
     },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+          // Setting this parameter is optional
+          anonymize: true,
+        },
+        // Defines the environments where the tracking should be available  - default is ["production"]
+        environments: ["production", "development"],
+      },
+    },
   ],
 };
