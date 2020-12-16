@@ -16,7 +16,7 @@ const AboutContainer = styled.div`
   ${tw`container mx-auto`}
 `;
 const AboutContent = styled.div`
-  ${tw`flex justify-center  max-w-md mx-auto`}
+  ${tw`flex justify-center  lg:max-w-md max-w-sm mx-auto`}
 `;
 const AboutItems = styled.div`
   ${tw`flex items-center`}
@@ -69,35 +69,28 @@ const Index = ({ location }) => {
         pathname={location}
       />
       <PageTransition>
-        <Sticky
-          onStateChange={handleStateChange}
-          top={0}
-          bottomBoundary={1200}
-          innerZ={50}
-        >
-          <AboutWrapper className={scrolled ? "active" : ""}>
-            <AboutContainer>
-              <AboutContent>
-                <AboutItems>
-                  <AboutImageWrapper>
-                    <Link to="/om-mig">
-                      <AboutImg className="about-img" fluid={data.bild.fluid} />
-                      <p className="sr-only">Ronja Sjölander</p>
-                    </Link>
-                  </AboutImageWrapper>
-                  <AboutText>
-                    <span>
-                      Välkommen till Cakes By Ronja. Här hittar du mina bakverk.{" "}
-                      <StyledLink to="/kontakt">
-                        Beställ ett specialanpassat bakverk.
-                      </StyledLink>
-                    </span>
-                  </AboutText>
-                </AboutItems>
-              </AboutContent>
-            </AboutContainer>
-          </AboutWrapper>
-        </Sticky>
+        <AboutWrapper>
+          <AboutContainer>
+            <AboutContent>
+              <AboutItems>
+                <AboutImageWrapper>
+                  <Link to="/om-mig">
+                    <AboutImg className="about-img" fluid={data.bild.fluid} />
+                    <p className="sr-only">Ronja Sjölander</p>
+                  </Link>
+                </AboutImageWrapper>
+                <AboutText>
+                  <span>
+                    Välkommen till Cakes By Ronja. Här hittar du mina bakverk.{" "}
+                    <StyledLink to="/kontakt">
+                      Beställ ett specialanpassat bakverk.
+                    </StyledLink>
+                  </span>
+                </AboutText>
+              </AboutItems>
+            </AboutContent>
+          </AboutContainer>
+        </AboutWrapper>
 
         <IndexContainer>
           <Pastries />
