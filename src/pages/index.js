@@ -16,7 +16,7 @@ const AboutContainer = styled.div`
   ${tw`container mx-auto`}
 `;
 const AboutContent = styled.div`
-  ${tw`flex justify-center  lg:max-w-md max-w-sm mx-auto`}
+  ${tw`flex justify-center  lg:max-w-md max-w-sm mx-auto lg:p-0 px-5`}
 `;
 const AboutItems = styled.div`
   ${tw`flex items-center`}
