@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import Pastries from "../components/Pastries";
 import PageTransition from "gatsby-plugin-page-transitions";
@@ -7,7 +7,6 @@ import tw, { styled } from "twin.macro";
 import Img from "gatsby-image";
 import UseAbout from "../hooks/use-about";
 import { Link } from "gatsby";
-import Sticky from "react-stickynode";
 
 const IndexContainer = tw.div`
   container mx-auto 
@@ -48,16 +47,6 @@ const AboutWrapper = styled.section`
 
 const Index = ({ location }) => {
   const data = UseAbout();
-  const [scrolled, setScrolled] = useState(false);
-  const handleStateChange = (status) => {
-    if (status.status === Sticky.STATUS_FIXED) {
-      setScrolled(true);
-    }
-    if (status.status === Sticky.STATUS_ORIGINAL) {
-      setScrolled(false);
-    }
-  };
-
   console.log({ data: data });
   return (
     <Layout>
